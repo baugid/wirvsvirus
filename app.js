@@ -4,7 +4,7 @@ const Datastore = require('nedb')
 const UIDGenerator = require('uid-generator')
 const uniqueSlug = require('unique-slug')
 
-const allowedFileTypes = new Map([['image/png', '.png'], ['application/json', '.json']]) //TODO: Add more filetypes
+const allowedFileTypes = new Map([['image/png', '.png'], ['application/pdf', '.pdf'], ['image/bmp', '.bmp'], ['image/jpeg', '.jpg']])
 
 //setup database
 const database = new Datastore("data.db")
