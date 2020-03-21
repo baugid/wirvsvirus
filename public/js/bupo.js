@@ -32,7 +32,7 @@ function read() {
         output.innerHTML += "<p> Lastname: " + data.lastname + "</p>"
         for (f of data.files) {
             if (f.type.indexOf("image") != -1)
-                output.innerHTML += '<img src="getFile/' + f.fileID + "/>"
+                output.innerHTML += '<img src="getFile/' + f.fileID + '"/>'
             else {
                 let description = ""
                 if (f.description)
