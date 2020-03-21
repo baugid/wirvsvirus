@@ -2,7 +2,7 @@ const express = require('express')
 const fileUpload = require('express-fileupload')
 const Datastore = require('nedb')
 const UIDGenerator = require('uid-generator')
-const uniqueFilename = require('unique-filename')
+const uniqueSlug = require('unique-slug')
 
 const allowedFileTypes = new Map([['image/png', '.png'], ['application/json', '.json']]) //TODO: Add more filetypes
 
@@ -60,7 +60,7 @@ app.post('/submitFile', (request, response) => {
     const filetype = f.mimetype
 
     if (allowedFileTypes.has(filetype)) {
-        const filename = uniqueFilename("") + allowedFileTypes.get(filetype)
+        const filename = uniqueSlug() + allowedFileTypes.get(filetype)
 
         f.mv('userfiles/' + filename)
         return response.json({ fileID: filename, type: filetype })
