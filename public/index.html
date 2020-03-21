@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+    <script src="js/index.js"> </script>
+</head>
+
+<body>
+    <form name="baseForm" onsubmit="return send()">
+        <input type="text" name="fname" placeholder="Firstname" required />
+        <input type="text" name="lname" placeholder="Lastname" required />
+        <input type="submit" value="Send" />
+    </form>
+
+    <form name="fileForm" onsubmit="return sendFile()">
+        <input type="file" name="file" required />
+        <input type="text" name="description" placeholder="Description"/>
+        <input type="submit" value="Send" />
+    </form>
+</body>
+
+</html>
