@@ -38,20 +38,20 @@ function send() {
 
 function sendFile() {
     const form = document.forms['fileForm']
-    const file = form['file'].files[0];
+    for (file of form['file'].files) {
+        //create post data
+        const formData = new FormData();
+        formData.append("file", file);
+        const options = {
+            method: 'POST',
+            body: formData
+        }
 
-    //create post data
-    const formData = new FormData();
-    formData.append("file", file);
-    const options = {
-        method: 'POST',
-        body: formData
+        sendRequest('/submitFile', options, data => {
+            data.description = form['description'].value
+            files.push(data)
+            document.body.innerHTML += "<p>Uploaded!</p>"
+        })
     }
-
-    sendRequest('/submitFile', options, data => {
-        data.description = form['description'].value
-        files.push(data)
-        document.body.innerHTML += "<p>Uploaded!</p>"
-    })
     return false //prevents reload
 }

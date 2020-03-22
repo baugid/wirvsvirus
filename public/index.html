@@ -14,8 +14,8 @@
     </form>
 
     <form name="fileForm" onsubmit="return sendFile()">
-        <input type="file" name="file" required />
-        <input type="text" name="description" placeholder="Description"/>
+        <input type="file" name="file" multiple="multiple" accept=".pdf,.png,.jpg,.jpeg,.bmp" required />
+        <input type="text" name="description" placeholder="Description" />
         <input type="submit" value="Send" />
     </form>
 </body>
