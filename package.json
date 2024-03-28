@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "nedb": "^1.8.0",
     "uid-generator": "^2.0.0",
     "express-fileupload": "^1.1.6",
